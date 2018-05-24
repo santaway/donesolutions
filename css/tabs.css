@@ -1,0 +1,92 @@
+body {
+  color: #2c3e50;
+  background: #ecf0f1;
+}
+h1 {
+  text-align: center;
+}
+.half {
+  float: left;
+  width: 100%;
+  padding: 0 1em;
+  margin-bottom:70px;
+}
+/* Acordeon styles */
+.tab {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+.tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.half label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1em;
+  color:#282828;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+  display:block;
+}
+.blue label {
+  background: #2980b9;
+}
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+  color:#282828;
+    border-radius: 25px;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+}
+.blue .tab-content {
+  background: #3498db;
+}
+.tab-content p {
+  margin: 1em;
+}
+/* :checked */
+input:checked ~ .tab-content {
+  max-height: max-content;
+}
+/* Icon */
+label::after {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+}
+input[type=checkbox] + label::after {
+  content: url("/upload/arrowblack.png");
+}
+input[type=radio] + label::after {
+  content: url("/upload/arrowblack.png");
+}
+input[type=checkbox]:checked + label::after {
+  transform: rotate(90deg);
+}
+input[type=radio]:checked + label::after {
+  transform: rotateX(180deg);
+}
+.tab-content p{
+    border-radius: 25px;
+    padding: 20px 10px;
+      margin-left: 5px;
+    margin-right: 5px;
+  text-align:justify;
+  box-shadow: -0.174px 1.992px 9.3px 0.7px rgba(1, 42, 65, 0.4);
+}
